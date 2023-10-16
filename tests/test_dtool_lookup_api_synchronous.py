@@ -106,7 +106,7 @@ def test_default_lookup():
     _log_nested_dict(logger.debug, response)
 
     compares = _compare(
-        response,
+        sorted(response, key=lambda r: r["uri"]),
         EXPECTED_DEFAULT_LOOKUP_RESPONSE,
         EXPECTED_DEFAULT_LOOKUP_RESPONSE_IMMUTABLE_MARKER
     )
